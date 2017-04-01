@@ -6,7 +6,7 @@
 typedef struct array
 {
 	int a;
-	int arreglo[];
+	int *arreglo;
 	
 }Array;
 
@@ -15,8 +15,9 @@ Array iniciarArray ()
 {
 	int i;
 	Array aux;
-	printf("Indique el tamaño de arreglo: ");
-	scanf("%d",&aux.a);//almacena el valor del tamaño del arreglo ingresado por el usuario
+	printf("Indique el tamaÃ±o de arreglo: ");
+	scanf("%d",&aux.a);//almacena el valor del tamaÃ±o del arreglo ingresado por el usuario
+	aux.arreglo =(int*)malloc(aux.a*sizeof(int));//mallo para reservar memoria
 	srand(time(0));//funciones para generar los numeros aleatorios
 	for (i=0;i<aux.a;i++){
 		aux.arreglo[i]= rand();//los numeros aleatorios se guardan en el arreglo
